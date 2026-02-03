@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chino Acupuncture & Herbs Clinic — Traditional Chinese Medicine in Chino, CA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Archivo', -apple-system, sans-serif;
+            line-height: 1.5;
+            color: #1a1a1a;
+            background: #fdfcf9;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e8e3d8;
+            background: #fdfcf9;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .clinic-name {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2a2520;
+            letter-spacing: -0.02em;
+        }
+
+        .clinic-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #756f65;
+            margin-top: -0.15rem;
+        }
+
+        .clinic-chinese {
+            font-size: 1.1rem;
+            color: #8b6914;
+            font-weight: 500;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2a2520;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #8b6914;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 9rem 5% 6rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.15;
+            color: #2a2520;
+            max-width: 900px;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-intro {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #4a4540;
+            max-width: 680px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            background: #8b6914;
+            color: #fdfcf9;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            border: 2px solid #8b6914;
+            transition: all 0.25s;
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            color: #8b6914;
+        }
+
+        .section-label {
+            font-size: 1.0rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #8b6914;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .section-heading {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #2a2520;
+            margin-bottom: 1.5rem;
+            line-height: 1.25;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fdfcf9;
+        }
+
+        .about-text p {
+            color: #4a4540;
+            line-height: 1.75;
+            margin-bottom: 1.3rem;
+            font-size: 1.05rem;
+        }
+
+        .about-text strong {
+            color: #2a2520;
+        }
+
+        .chinese-philosophy {
+            background: #2a2520;
+            color: #e8e3d8;
+            padding: 6rem 5%;
+        }
+
+        .chinese-philosophy .section-label {
+            color: #d4b165;
+        }
+
+        .chinese-philosophy .section-heading {
+            color: #fdfcf9;
+        }
+
+        .chinese-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .chinese-text {
+            font-size: 1.05rem;
+            line-height: 2;
+            color: #e8e3d8;
+            margin-top: 2rem;
+            text-align: justify;
+        }
+
+        /* Services Grid */
+        .services-container {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #fdfcf9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            border: 1px solid #e8e3d8;
+            margin-top: 3rem;
+        }
+
+        .service-item {
+            padding: 2rem 1.5rem;
+            border-right: 1px solid #e8e3d8;
+            background: #fff;
+            transition: background 0.3s;
+            text-align: center;
+        }
+
+        .service-item:last-child {
+            border-right: none;
+        }
+
+        .service-item:hover {
+            background: #fdfcf9;
+        }
+
+        .service-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+
+        .service-title {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2a2520;
+            margin-bottom: 0.4rem;
+        }
+
+        .service-chinese {
+            font-size: 1rem;
+            color: #8b6914;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .service-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #5a5550;
+            text-align: left;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #fdfcf9;
+        }
+
+        .pricing-table {
+            margin-top: 2rem;
+            border: 1px solid #e8e3d8;
+            background: #fff;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            border-bottom: 1px solid #e8e3d8;
+            transition: background 0.2s;
+        }
+
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-row:hover {
+            background: #fdfcf9;
+        }
+
+        .pricing-service {
+            padding: 1.2rem 1.5rem;
+            border-right: 1px solid #e8e3d8;
+        }
+
+        .pricing-service-name {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a2520;
+            margin-bottom: 0.3rem;
+        }
+
+        .pricing-service-chinese {
+            font-size: 0.9rem;
+            color: #8b6914;
+            margin-bottom: 0.3rem;
+        }
+
+        .pricing-note {
+            font-size: 0.8rem;
+            color: #756f65;
+            font-style: italic;
+        }
+
+        .pricing-cost {
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pricing-amount {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #8b6914;
+        }
+
+        .insurance-note {
+            max-width: 900px;
+            margin: 2rem auto 0;
+            padding: 1.5rem;
+            background: #f5f2ec;
+            border-left: 3px solid #8b6914;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #4a4540;
+        }
+
+        /* Photo Gallery */
+        .gallery-section {
+            padding: 6rem 5%;
+            background: #2a2520;
+        }
+
+        .gallery-section .section-label {
+            color: #d4b165;
+        }
+
+        .gallery-section .section-heading {
+            color: #fdfcf9;
+        }
+
+        .gallery-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-scroll-container {
+            margin-top: 3rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: #8b6914 #1a1a1a;
+        }
+
+        .gallery-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-scroll-container::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        .gallery-scroll-container::-webkit-scrollbar-thumb {
+            background: #8b6914;
+            border-radius: 4px;
+        }
+
+        .gallery-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #d4b165;
+        }
+
+        .gallery-grid {
+            display: flex;
+            gap: 1.5rem;
+            padding-bottom: 1rem;
+        }
+
+        .gallery-item {
+            flex: 0 0 400px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #8b6914;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -2rem;
+            right: 0;
+            background: #8b6914;
+            color: #fdfcf9;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .lightbox-close:hover {
+            background: #d4b165;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(139, 105, 20, 0.8);
+            color: #fdfcf9;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .lightbox-nav:hover {
+            background: #8b6914;
+        }
+
+        .lightbox-prev {
+            left: -5rem;
+        }
+
+        .lightbox-next {
+            right: -5rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 6rem 5%;
+            background: #fdfcf9;
+            color: #1a1a1a;
+        }
+
+        .testimonials-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            border-left: 3px solid #8b6914;
+            padding: 1.5rem;
+            background: #f5f2ec;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2a2520;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-size: 0.85rem;
+            color: #8b6914;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-top: 1px solid #e8e3d8;
+        }
+
+        .contact-info {
+            padding: 5rem 5%;
+            background: #f5f2ec;
+            border-right: 1px solid #e8e3d8;
+        }
+
+        .contact-detail {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-detail-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #8b6914;
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+
+        .contact-detail-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2a2520;
+        }
+
+        .contact-detail-content a {
+            color: #2a2520;
+            text-decoration: none;
+            border-bottom: 1px solid #d4b165;
+            transition: border-color 0.2s;
+        }
+
+        .contact-detail-content a:hover {
+            border-bottom-color: #8b6914;
+        }
+
+        .map-area {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .map-area iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 100px;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2.5rem 5%;
+            border-top: 1px solid #e8e3d8;
+            background: #fdfcf9;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            color: #756f65;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            padding: 0.7rem 1.5rem;
+            background: #2a2520;
+            color: #fdfcf9;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.25s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            background: #8b6914;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                border-right: none;
+                border-bottom: 1px solid #e8e3d8;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 5% 4rem;
+            }
+
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .logo-area {
+                gap: 0.5rem;
+            }
+
+            .clinic-chinese {
+                font-size: 0.9rem;
+            }
+
+            .contact-info {
+                padding: 3rem 5%;
+            }
+
+            .services-container,
+            .testimonials-section,
+            .about-section,
+            .chinese-philosophy {
+                padding: 4rem 5%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-item {
+                border-right: none;
+                border-bottom: 1px solid #e8e3d8;
+            }
+
+            .service-item:last-child {
+                border-bottom: none;
+            }
+
+            .pricing-row {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-service {
+                border-right: none;
+                border-bottom: 1px solid #e8e3d8;
+            }
+
+            .pricing-cost {
+                padding: 1.5rem 2rem;
+                justify-content: flex-start;
+            }
+
+            .gallery-item {
+                flex: 0 0 300px;
+                height: 400px;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .footer-links a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-area">
+            <div class="clinic-chinese">奇諾中醫</div>
+            <div class="logo-text">
+                <div class="clinic-name">Chino Acupuncture</div>
+                <div class="clinic-subtitle">& Herbs Clinic</div>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Treatments</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Welcome to Chino Acupuncture!</h1>
+        <p class="hero-intro">"Our therapy emphasizes natural, holistic healing through traditional acupuncture and herbal medicine, carefully tailored to each patient." — Dr. Anton Lin</p>
+        <p class="hero-intro" style="font-size: 0.9rem; color: #756f65; margin-top: -1.5rem;">Established 2016</p>
+        <a href="#contact" class="hero-cta">Schedule a Visit</a>
+    </section>
+
+    <!-- About -->
+    <section class="about-section" id="about">
+        <div class="section-label">Meet Our Practitioners</div>
+        <h2 class="section-heading">Our Licensed Acupuncturists</h2>
+        <div class="about-text">
+            <p><strong>Dr. Y.D. Anton Lin, L.Ac., PhD</strong> and <strong>Dr. Y.H. Mirada Wang, L.Ac.</strong> are both licensed acupuncturists in California, each bringing extensive training and expertise in Traditional Chinese Medicine.</p>
+            <p>With strong skills in acupuncture and deep backgrounds in herbal medicine, our practitioners believe acupuncture helps activate the body's natural physical and chemical healing responses. Through years of study and practice, they have found that Traditional Chinese Medicine (TCM) offers a safe and effective way to improve health with minimal side effects.</p>
+            <p>TCM includes acupuncture along with other traditional therapies such as herbal medicine, cupping, tuina, and moxibustion, which work well alongside Western medicine. Fluent in both Mandarin and English, our team is dedicated to bringing effective TCM treatments to patients throughout the greater Los Angeles area.</p>
+        </div>
+    </section>
+
+    <!-- Chinese Philosophy -->
+    <section class="chinese-philosophy">
+        <div class="chinese-content">
+            <div class="section-label">中醫傳承</div>
+            <h2 class="section-heading">奇諾中醫</h2>
+            <div class="chinese-text">
+                <p>中醫乃是東方醫學中的一塊瑰寶, 其被後人傳承下來的針灸療法、始於夏商，已經有四至五千年歷史，《黃帝內經》是世界上第一部醫學專著，其內容以鍼灸為主。鍼灸作為一種自然療法，為中華民族的護生育幼、保健延年做出了重大貢獻。 在科技高度發展的今天，人們逐漸發現西藥的副作用正危害著人類的健康，回歸自然和尋求自然療法的呼聲越來越高。因為任何藥物解毒都需要在肝臟腎臟完成，其對肝腎的損害是無須置疑的。</p>
+                <p style="margin-top: 1.5rem;">針灸療法是通過刺激人體穴位來提升自身免疫力以達到疏通經絡、運行氣血、調整臟腑功能的目的，加上天然草藥（經由美國CGMP大藥廠研製），對人體無任何副作用。中醫的治療範圍很廣，包括內、外、婦、兒、神經、皮膚和五官科等各種常見病和疑難雜症，經聯合國衛生組織統計可以治療的疾病為三百餘種，尤其對其中的100多種疾病的療效特別好，遠遠優於其他療法，所以聯合國衛生組織從七十年初就大力提倡和推行針灸療法，它以簡便易行的方法、神奇的療效、獨特的魅力贏得了人們的青睞。目前，在世界各地都出現了針灸熱，至今方興未艾。</p>
+                <p style="margin-top: 1.5rem;">美國奇諾中醫秉持著宗旨『人本醫療，尊重生命』的理念，以拔除病人痛苦為己任，用愛守護鄉親的健康。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services-container" id="services">
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-heading">Our Treatments</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="./images/acupuncture.jpg" alt="Acupuncture" class="service-image">
+                <h3 class="service-title">Acupuncture</h3>
+                <div class="service-chinese">針灸療法</div>
+                <p class="service-description">Traditional acupuncture therapy designed to harmonize your body's energy flow and promote natural healing.</p>
+            </div>
+            <div class="service-item">
+                <img src="./images/herbal.jpg" alt="Herbal Medicine" class="service-image">
+                <h3 class="service-title">Chinese Herbal Medicine</h3>
+                <div class="service-chinese">中藥治療</div>
+                <p class="service-description">Customized traditional formulas and modern concentrated extracts tailored to your unique needs.</p>
+            </div>
+            <div class="service-item">
+                <img src="./images/image.png" alt="Moxibustion" class="service-image">
+                <h3 class="service-title">Moxibustion</h3>
+                <div class="service-chinese">艾灸</div>
+                <p class="service-description">Therapeutic heat treatment using mugwort to warm meridian points and strengthen vital energy.</p>
+            </div>
+            <div class="service-item">
+                <img src="./images/cupping.jpg" alt="Cupping" class="service-image">
+                <h3 class="service-title">Cupping Therapy</h3>
+                <div class="service-chinese">拔罐</div>
+                <p class="service-description">Ancient technique using suction cups to release muscle tension and improve blood flow.</p>
+            </div>
+            <div class="service-item">
+                <img src="./images/ear.jpg" alt="Ear Point" class="service-image">
+                <h3 class="service-title">Ear Point Stimulation</h3>
+                <div class="service-chinese">耳穴</div>
+                <p class="service-description">Auricular acupuncture targeting reflex points in the ear to address various health conditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section" id="pricing">
+        <div class="section-label">Investment in Your Health</div>
+        <h2 class="section-heading">Treatment Pricing</h2>
+        <div class="pricing-table">
+            <div class="pricing-row">
+                <div class="pricing-service">
+                    <div class="pricing-service-name">Acupuncture Treatment with Diagnosis</div>
+                    <div class="pricing-service-chinese">諮詢診斷 + 針灸治療</div>
+                </div>
+                <div class="pricing-cost">
+                    <div class="pricing-amount">$85</div>
+                </div>
+            </div>
+            <div class="pricing-row">
+                <div class="pricing-service">
+                    <div class="pricing-service-name">Prescription Herbal Formula</div>
+                    <div class="pricing-service-chinese">處方藥 / 科學中藥粉劑</div>
+                    <div class="pricing-note">(optional add-on)</div>
+                </div>
+                <div class="pricing-cost">
+                    <div class="pricing-amount">$60</div>
+                </div>
+            </div>
+            <div class="pricing-row">
+                <div class="pricing-service">
+                    <div class="pricing-service-name">Cupping / Ear Seeds / Gua Sha / Acupressure</div>
+                    <div class="pricing-service-chinese">諮詢診斷 + 拔罐 / 耳穴 / 刮痧 / 局部推拿</div>
+                </div>
+                <div class="pricing-cost">
+                    <div class="pricing-amount">$65</div>
+                </div>
+            </div>
+            <div class="pricing-row">
+                <div class="pricing-service">
+                    <div class="pricing-service-name">Herbal Tea / Cream / Patch</div>
+                    <div class="pricing-service-chinese">中藥茶 / 中藥膏</div>
+                </div>
+                <div class="pricing-cost">
+                    <div class="pricing-amount">$25</div>
+                </div>
+            </div>
+            <div class="pricing-row">
+                <div class="pricing-service">
+                    <div class="pricing-service-name">Additional Syndrome</div>
+                    <div class="pricing-service-chinese">治療多一種症狀</div>
+                </div>
+                <div class="pricing-cost">
+                    <div class="pricing-amount">$25</div>
+                </div>
+            </div>
+        </div>
+        <div class="insurance-note">
+            <strong>Insurance Information:</strong> While we do not directly accept insurance, we are happy to provide you with a detailed receipt (superbill) that you may submit to your insurance provider for potential reimbursement. Please check with your insurance company regarding your out-of-network benefits.
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-wrapper">
+            <div class="section-label">Our Clinic</div>
+            <h2 class="section-heading">Photo Gallery</h2>
+            <div class="gallery-scroll-container">
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox(0)">
+                        <img src="./images/photo6.jpg" alt="Clinic Photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(1)">
+                        <img src="./images/photo5.jpg" alt="Clinic Photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(2)">
+                        <img src="./images/photo4.jpg" alt="Clinic Photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img src="./images/photo1.jpg" alt="Clinic Photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(4)">
+                        <img src="./images/photo3.jpg" alt="Clinic Photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(5)">
+                        <img src="./images/photo2.jpg" alt="Clinic Photo">
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(6)">
+                        <img src="./images/photo7.jpg" alt="Clinic Photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
+            <button class="lightbox-nav lightbox-prev" onclick="changeImage(event, -1)">‹</button>
+            <img class="lightbox-image" id="lightbox-image" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="changeImage(event, 1)">›</button>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="testimonials-wrapper">
+            <div class="section-label">Patient Experiences</div>
+            <h2 class="section-heading">What Our Patients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Since receiving regular treatment from Dr. Lin I have yet to experience a sinus headache. He has provided significant relief to my jaw and has improved my overall health."</p>
+                    <p class="testimonial-author">Alyssa E. — Yelp</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Both him and his wife are very caring and professional. The quality of what they do is outstanding."</p>
+                    <p class="testimonial-author">Grace F. — Yelp</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Dr. Anton Lin explains everything thoroughly and listens to all your concerns. I already feel my pain reduce."</p>
+                    <p class="testimonial-author">Haeli Y. — Yelp</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"After I got acupuncture and Chinese herbal medicine from Dr. Lin it all went away within a week! I'm very impressed at how effective his treatments were."</p>
+                    <p class="testimonial-author">Kay C. — Yelp</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"This is my second session and my dizziness improved a lot. The couple Doctors assisting me is very kind and compassionate."</p>
+                    <p class="testimonial-author">Everlyn U. — Google</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"After 3 weeks and 6 sessions of acupuncture, my face went back to normal and I got a full recovery with unbelievable speed."</p>
+                    <p class="testimonial-author">Jonathan L. — Google</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Within just two acupuncture sessions, I noticed significant improvement in hearing. Dr. Lin was patient, knowledgeable, and incredibly helpful."</p>
+                    <p class="testimonial-author">Nayali C.-Z. — Google</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"My 2 year-long insomnia was fixed within 3 sessions! After just 1 session I felt significantly lighter and relaxed."</p>
+                    <p class="testimonial-author">Karen T. — Google</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="contact-info">
+            <div class="section-label">Get In Touch</div>
+            <h2 class="section-heading">Visit Our Clinic</h2>
+            
+            <div class="contact-detail">
+                <div class="contact-detail-label">Address</div>
+                <div class="contact-detail-content">
+                    13641 Central Avenue, Suite P<br>
+                    Chino, CA 91710
+                </div>
+            </div>
+
+            <div class="contact-detail">
+                <div class="contact-detail-label">Phone</div>
+                <div class="contact-detail-content">
+                    <a href="tel:9093132128">(909) 313-2128</a><br>
+                    Text messages welcome
+                </div>
+            </div>
+
+            <div class="contact-detail">
+                <div class="contact-detail-label">Email</div>
+                <div class="contact-detail-content">
+                    <a href="mailto:chinoacupuncture@gmail.com">chinoacupuncture@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-detail">
+                <div class="contact-detail-label">Hours</div>
+                <div class="contact-detail-content" style="line-height: 1.8;">
+                    Monday: 9:30 AM – 1:00 PM, 3:00 PM – 6:00 PM<br>
+                    Tuesday: Closed<br>
+                    Wednesday: 9:30 AM – 1:00 PM, 3:00 PM – 6:00 PM<br>
+                    Thursday: Closed<br>
+                    Friday: 9:30 AM – 1:00 PM, 3:00 PM – 6:00 PM<br>
+                    Saturday: 9:30 AM – 1:00 PM, 3:00 PM – 6:00 PM<br>
+                    Sunday: Closed
+                </div>
+            </div>
+        </div>
+        <div class="map-area">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.6886881448687!2d-117.69025492347166!3d34.0055194196631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c32bbc9302ebb3%3A0x50575095fcce1c8b!2sChino%20Acupuncture%20and%20Herbs%20Clinic!5e0!3m2!1sen!2sus!4v1234567890123" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">© 2016 Chino Acupuncture & Herbs Clinic · Established 2016</p>
+            <div class="footer-links">
+                <a href="https://www.yelp.com/biz/chino-acupuncture-and-herbs-clinic-chino" target="_blank">Yelp Reviews</a>
+                <a href="https://www.google.com/maps/place/Chino+Acupuncture+and+Herbs+Clinic" target="_blank">Google Reviews</a>
+                <a href="https://www.facebook.com/MagicTCM" target="_blank">Facebook Page</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery Lightbox
+        const galleryImages = [
+            './images/photo6.jpg',
+            './images/photo5.jpg',
+            './images/photo4.jpg',
+            './images/photo1.jpg',
+            './images/photo3.jpg',
+            './images/photo2.jpg',
+            './images/photo7.jpg'
+        ];
+
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            document.getElementById('lightbox-image').src = galleryImages[index];
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                event.stopPropagation();
+                document.getElementById('lightbox').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function changeImage(event, direction) {
+            event.stopPropagation();
+            currentImageIndex += direction;
+            
+            if (currentImageIndex < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            } else if (currentImageIndex >= galleryImages.length) {
+                currentImageIndex = 0;
+            }
+            
+            document.getElementById('lightbox-image').src = galleryImages[currentImageIndex];
+        }
+
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('lightbox').classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    document.getElementById('lightbox').classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowLeft') {
+                    changeImage(e, -1);
+                } else if (e.key === 'ArrowRight') {
+                    changeImage(e, 1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
