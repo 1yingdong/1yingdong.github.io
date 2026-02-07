@@ -91,7 +91,7 @@
 
         /* Hero */
         .hero {
-            padding: 9rem 5% 6rem;
+            padding: 8rem 5% 6rem;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -120,7 +120,7 @@
             font-size: 1.15rem;
             line-height: 1.7;
             color: #4a4540;
-            max-width: 680px;
+            max-width: 700px;
             margin-bottom: 2.5rem;
         }
 
@@ -164,7 +164,7 @@
             color: #8b6914;
             font-size: 0.9rem;
             text-align: center;
-            padding: 0.5rem;
+            padding: 0.3rem;
         }
 
         .section-label {
@@ -303,6 +303,55 @@
             line-height: 1.6;
             color: #5a5550;
             text-align: left;
+        }
+
+        /* Efficacy Section */
+        .efficacy-section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #f5f2ec;
+        }
+
+        .efficacy-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .efficacy-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: #fff;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e8e3d8;
+        }
+
+        .efficacy-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .efficacy-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #8b6914;
+        }
+
+        .efficacy-title {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a2520;
+            margin-bottom: 0.5rem;
+        }
+
+        .efficacy-english {
+            font-size: 0.95rem;
+            color: #756f65;
+            font-style: italic;
         }
 
         /* Pricing Section */
@@ -855,6 +904,11 @@
                 border-bottom: none;
             }
 
+            .efficacy-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
             .pricing-row {
                 grid-template-columns: 1fr;
             }
@@ -934,7 +988,7 @@
             <div class="hero-text">
                 <h1>Welcome to Chino Acupuncture!</h1>
                 <p class="hero-intro">"We foster holistic wellness by combining traditional acupuncture with herbal remedies, thoughtfully personalized for every patient's unique journey." — Dr. Anton Lin</p>
-                <p class="hero-intro" style="font-size: 0.9rem; color: #756f65; margin-top: -1.5rem;">Established 2016</p>
+                <p class="hero-intro" style="font-size: 1.0rem; color: #756f65; margin-top: -1.5rem;">Established 2016</p>
                 <a href="#contact" class="hero-cta">Schedule a Visit</a>
             </div>
             <div class="hero-image-container">
@@ -1013,6 +1067,39 @@
                 <h3 class="service-title">Ear Point Stimulation</h3>
                 <div class="service-chinese">耳穴</div>
                 <p class="service-description">Auricular acupuncture targeting reflex points in the ear to address various health conditions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Efficacy Section -->
+    <section class="efficacy-section">
+        <div class="section-label">Treatment Benefits</div>
+        <h2 class="section-heading">Our Efficacy</h2>
+        <div class="efficacy-grid">
+            <div class="efficacy-item">
+                <div class="efficacy-icon">💆</div>
+                <h3 class="efficacy-title">Pain Management</h3>
+                <p class="efficacy-english">消除疼痛</p>
+            </div>
+            <div class="efficacy-item">
+                <div class="efficacy-icon">💪</div>
+                <h3 class="efficacy-title">Boost Circulation</h3>
+                <p class="efficacy-english">補氣養血強身</p>
+            </div>
+            <div class="efficacy-item">
+                <div class="efficacy-icon">☯️</div>
+                <h3 class="efficacy-title">Balance Body</h3>
+                <p class="efficacy-english">袪寒去濕</p>
+            </div>
+            <div class="efficacy-item">
+                <div class="efficacy-icon">🏃</div>
+                <h3 class="efficacy-title">Sport Injury</h3>
+                <p class="efficacy-english">運動傷害</p>
+            </div>
+            <div class="efficacy-item">
+                <div class="efficacy-icon">🧘</div>
+                <h3 class="efficacy-title">Relieve Stress</h3>
+                <p class="efficacy-english">舒緩神經</p>
             </div>
         </div>
     </section>
@@ -1239,7 +1326,7 @@
             </div>
 
             <div class="contact-detail">
-                <div class="contact-detail-label">Hours</div>
+                <div class="contact-detail-label">Hours <span style="font-weight: 500; font-size: 0.75rem;">(By appointment only)</span></div>
                 <div class="contact-detail-content">
                     <div class="hours-table">
                         <div class="hours-day">Monday:</div>
@@ -1278,7 +1365,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Gallery Lightbox
         const galleryImages = [
             './images/photo6.jpg',
@@ -1379,13 +1466,3 @@
             
             clearTimeout(userScrollTimeout);
             scrollAmount = galleryScroll.scrollLeft;
-            
-            // Resume auto-scroll after 3 seconds of no manual scrolling
-            userScrollTimeout = setTimeout(function() {
-                isAutoScrolling = true;
-                autoScroll();
-            }, 3000);
-        });
-    </script>
-</body>
-</html>
