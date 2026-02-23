@@ -1424,45 +1424,56 @@
         // Auto-scroll gallery
         const galleryScroll = document.getElementById('gallery-scroll');
         let scrollAmount = 0;
-        let scrollDirection = 1; // 1 for right, -1 for left
-        let isAutoScrolling = true;
+        let scrollDirection = 1;
+        let rafId = null;
 
         function autoScroll() {
-            if (!isAutoScrolling) return;
-
             const maxScroll = galleryScroll.scrollWidth - galleryScroll.clientWidth;
-            
-            // Change direction at the ends
+            if (maxScroll <= 0) return;
+
             if (scrollAmount >= maxScroll) {
                 scrollDirection = -1;
             } else if (scrollAmount <= 0) {
                 scrollDirection = 1;
             }
 
-            scrollAmount += scrollDirection * 1; // Adjust speed here (1 pixel per frame)
+            scrollAmount += scrollDirection * 0.5;
             galleryScroll.scrollLeft = scrollAmount;
 
-            requestAnimationFrame(autoScroll);
+            rafId = requestAnimationFrame(autoScroll);
         }
 
-        // Start auto-scrolling
-        autoScroll();
+        function startAutoScroll() {
+            if (rafId) return;
+            rafId = requestAnimationFrame(autoScroll);
+        }
 
-        // Pause auto-scroll on hover
-        galleryScroll.addEventListener('mouseenter', function() {
-            isAutoScrolling = false;
-        });
+        function stopAutoScroll() {
+            if (rafId) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+            }
+        }
 
-        // Resume auto-scroll when mouse leaves
+        // Start auto-scrolling after images have a chance to load
+        setTimeout(startAutoScroll, 500);
+
+        galleryScroll.addEventListener('mouseenter', stopAutoScroll);
+
         galleryScroll.addEventListener('mouseleave', function() {
-            isAutoScrolling = true;
-            autoScroll();
+            scrollAmount = galleryScroll.scrollLeft;
+            startAutoScroll();
         });
 
-        // Pause auto-scroll when user manually scrolls
+        // Pause auto-scroll when user manually scrolls, then resume
         let userScrollTimeout;
         galleryScroll.addEventListener('scroll', function() {
-            if (isAutoScrolling) return; // Don't interfere with auto-scroll
-            
+            if (rafId) return; // auto-scroll in progress, ignore
+
             clearTimeout(userScrollTimeout);
             scrollAmount = galleryScroll.scrollLeft;
+            userScrollTimeout = setTimeout(startAutoScroll, 2000);
+        });
+    </script>
+</body>
+</html>
